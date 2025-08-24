@@ -1,16 +1,27 @@
 import React from 'react';
-import { Alert,Button, Text, StyleSheet } from 'react-native';
+import { View, Button, Text, StyleSheet } from 'react-native';
 import PgBaseScreen from './PgBaseScreen';
 
-export default function PgMenuScreen() {
+export default function PgMenuScreen({ navigation }: any) {
   return (
     <PgBaseScreen style={styles.center}>
       <Text style={styles.title}>Playground Menu</Text>
-      <Button
-        title="Button 1"
-        onPress={() => Alert.alert('Button 1 pressed')}
-      />
-      <Button title="Button 2" onPress={() => console.log('Button 2 pressed')} />
+
+      <View style={{ margin: 20 }}>
+        <Button
+          title="PgText"
+          onPress={() => navigation.navigate('PgText')}
+        />
+      </View>
+
+      <View style={{ 
+        
+       }}>
+        <Button
+          title="PgTextInput"
+          onPress={() => navigation.navigate('PgTextInput')}
+        />
+      </View>
     </PgBaseScreen>
   );
 }

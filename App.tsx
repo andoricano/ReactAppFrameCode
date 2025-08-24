@@ -14,22 +14,41 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screen/HomeScreen';
-import DetailScreen from './screen/DetailScreen';
-import {NaviStackList} from './screen/NaviStack';
-import PlaygroundScreen from './screen/playground/PgMenuScreen';
 import PgMenuScreen from './screen/playground/PgMenuScreen';
+import PgTextInputScreen from './screen/playground/PgTextInputScreen';
+import PgTextScreen from './screen/playground/PgTextScreen';
+
+type NaviStackList = {
+  Home: undefined;
+  PgMenu: undefined;
+  PgTextInput: undefined;
+  PgText: undefined;
+};
+
+const screens: { name: keyof NaviStackList; component: React.ComponentType<any> }[] = [
+  { name: 'Home', component: HomeScreen },
+  { name: 'PgMenu', component: PgMenuScreen },
+  { name: 'PgTextInput', component: PgTextInputScreen },
+  { name: 'PgText', component: PgTextScreen },
+];
 
 const Stack = createNativeStackNavigator<NaviStackList>();
-function App() {
 
+function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator 
-    initialRouteName="Home"
-    screenOptions={{ contentStyle: { backgroundColor: '#fafafa' } }}>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="PgMenu" component={PgMenuScreen} />
+        <Stack.Navigator
+          initialRouteName="Home"
+          screenOptions={{ contentStyle: { backgroundColor: '#fafafa' } }}
+        >
+          {screens.map(screen => (
+            <Stack.Screen
+              key={screen.name}
+              name={screen.name}
+              component={screen.component}
+            />
+          ))}
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
