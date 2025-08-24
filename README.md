@@ -7,6 +7,7 @@ Navigation같은 것들은 처음에 높은 확률로 구성됩니다.
 ### NPM
 * APP 및 Project 이름 바꾸기
 npx react-native-rename "NewAppName"
+ -> 바꾼 후에 package.json, Android의 경우 Manifest, MainActivity(package, componentName) 꼭 맞춰주기
 
 
 ### Android 

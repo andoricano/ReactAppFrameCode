@@ -16,20 +16,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screen/HomeScreen';
 import DetailScreen from './screen/DetailScreen';
 import {NaviStackList} from './screen/NaviStack';
+import PlaygroundScreen from './screen/playground/PgMenuScreen';
+import PgMenuScreen from './screen/playground/PgMenuScreen';
 
 const Stack = createNativeStackNavigator<NaviStackList>();
 function App() {
-console.log('App Rendered')
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator 
     initialRouteName="Home"
-    screenOptions={{ contentStyle: { backgroundColor: '#fafafa' } }}
-  >
+    screenOptions={{ contentStyle: { backgroundColor: '#fafafa' } }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Detail" component={DetailScreen} />
+          <Stack.Screen name="PgMenu" component={PgMenuScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

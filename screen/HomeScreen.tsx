@@ -10,8 +10,8 @@ export default function HomeScreen({ navigation }: any) {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <Text style={styles.title}>Home Screen</Text>
       <Button
-        title="Go to Detail"
-        onPress={() => navigation.navigate('Detail')}
+        title="Go to Playground"
+        onPress={() => navigation.navigate('PgMenu')}
       />
     </View>
   );
