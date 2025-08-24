@@ -1,4 +1,9 @@
-# ReactNative를 한 번 사용해보고 싶어서 만들었습니다.
+## ReactNative를 위한 코드 모음
 
-- 겸사겸사 저한테 필요한 영양제를 타겟으로 한 알람 앱입니다.
-- 누군가에게 도움이 되었으면 좋겠어서 만들어봅니다.
+Navigation같은 것들은 처음에 높은 확률로 구성됩니다.
+이러한 코드들을 종합하여 모아둔다면 다른 프로젝트를 시작할 때 편해집니다.
+
+>>CMD
+* APP 및 Project 이름 바꾸기
+npx react-native-rename "NewAppName"
+
