@@ -7,10 +7,7 @@
 import { enableScreens } from 'react-native-screens';
 enableScreens();
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import {SafeAreaProvider,useSafeAreaInsets,} from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screen/HomeScreen';
@@ -38,9 +35,12 @@ function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
+        <StatusBar barStyle="dark-content"/>
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={{ contentStyle: { backgroundColor: '#fafafa' } }}
+          screenOptions={{
+            headerShown: false,
+          }}
         >
           {screens.map(screen => (
             <Stack.Screen
